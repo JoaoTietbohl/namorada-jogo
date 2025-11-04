@@ -6,105 +6,137 @@
     <title>Memória da Dora 🐾</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/dora-puzzle.css">
-<style>
-    body.puzzle-body {
-        font-family: "Comic Sans MS", "Poppins", sans-serif;
-        background: linear-gradient(135deg, #87758b, #b6baff);
-        margin: 0;
-        padding: 0;
-        color: #3d0066;
-    }
+    <style>
+        body.puzzle-body {
+            font-family: "Comic Sans MS", "Poppins", sans-serif;
+            background: linear-gradient(135deg, #87758b, #b6baff);
+            margin: 0;
+            padding: 0;
+            color: #3d0066;
+        }
 
-    header {
-        text-align: center;
-        background: linear-gradient(90deg, #87758b, #dbaaff);
-        padding: 20px;
-        border-bottom: 4px solid #9b5de5;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
+        header {
+            text-align: center;
+            background: linear-gradient(90deg, #87758b, #dbaaff);
+            padding: 20px;
+            border-bottom: 4px solid #9b5de5;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
 
-    header h1 {
-        margin: 10px 0 5px;
-        font-size: 2rem;
-        color:#87758b;
-        text-shadow: 1px 1px 3px rgba(255,255,255,0.6);
-    }
+        header h1 {
+            margin: 10px 0 5px;
+            font-size: 2rem;
+            color:#87758b;
+            text-shadow: 1px 1px 3px rgba(255,255,255,0.6);
+        }
 
-    header p {
-        font-size: 1rem;
-        margin: 0;
-        color: #5c0099;
-    }
+        header p {
+            font-size: 1rem;
+            margin: 0;
+            color: #5c0099;
+        }
 
-    .back-button {
-        position: absolute;
-        top: 15px;
-        left: 15px;
-        text-decoration: none;
-        background-color: #fff;
-        padding: 8px 14px;
-        border-radius: 20px;
-        color: #7e57c2;
-        font-weight: bold;
-        border: 2px solid #b388ff;
-        transition: all 0.3s ease;
-    }
+        .back-button {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            text-decoration: none;
+            background-color: #fff;
+            padding: 8px 14px;
+            border-radius: 20px;
+            color: #7e57c2;
+            font-weight: bold;
+            border: 2px solid #b388ff;
+            transition: all 0.3s ease;
+        }
 
-    .back-button:hover {
-        background-color: #b388ff;
-        color: white;
-    }
+        .back-button:hover {
+            background-color: #b388ff;
+            color: white;
+        }
 
-    .memory-main {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 30px 15px;
-    }
+        .memory-main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 15px;
+        }
 
-    .memory-grid-7x2 {
-        display: grid;
-        grid-template-columns: repeat(7, 90px);
-        grid-gap: 15px;
-        justify-content: center;
-        margin-bottom: 25px;
-    }
+        .memory-grid-7x2 {
+            display: grid;
+            grid-template-columns: repeat(7, 90px);
+            grid-gap: 15px;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
 
-    .memory-grid-7x2 img {
-        width: 90px;
-        height: 90px;
-        border-radius: 10px;
-        border: 3px solid #fff;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-        transition: transform 0.2s ease, box-shadow 0.3s;
-    }
+        .memory-grid-7x2 img {
+            width: 90px;
+            height: 90px;
+            border-radius: 10px;
+            border: 3px solid #fff;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: transform 0.2s ease, box-shadow 0.3s;
+        }
 
-    .memory-grid-7x2 img:hover {
-        transform: scale(1.05);
-        box-shadow: 0 6px 10px rgba(0,0,0,0.3);
-    }
+        .memory-grid-7x2 img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 10px rgba(0,0,0,0.3);
+        }
 
-    .cta-button {
-        background: linear-gradient(90deg, #a16eff, #c57cff);
-        border: none;
-        color: white;
-        padding: 12px 25px;
-        border-radius: 25px;
-        font-size: 1rem;
-        cursor: pointer;
-        font-weight: bold;
-        box-shadow: 0 3px 6px rgba(0,0,0,0.2);
-        transition: background 0.3s, transform 0.2s;
-    }
+        .cta-button {
+            background: linear-gradient(90deg, #a16eff, #c57cff);
+            border: none;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+            transition: background 0.3s, transform 0.2s;
+        }
 
-    .cta-button:hover {
-        transform: scale(1.05);
-        background: linear-gradient(90deg, #8a56ff, #b44cff);
-    }
+        .cta-button:hover {
+            transform: scale(1.05);
+            background: linear-gradient(90deg, #8a56ff, #b44cff);
+        }
 
-    
-</style>
+        #timer {
+            font-size: 22px;
+            font-weight: bold;
+            color: #7b45e7;
+            margin-bottom: 15px;
+        }
 
+        #gameOverModal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        #gameOverModal.visible {
+            display: flex;
+        }
+
+        #gameOverModal .modal-content {
+            background: #2a004e;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px #a05fff;
+        }
+
+        button {
+            margin: 30px 0; /* espaço em cima e embaixo */
+            }
+
+    </style>
 </head>
 
 <body class="puzzle-body">
@@ -115,18 +147,64 @@
     </header>
 
     <main class="memory-main">
+        <!-- Timer e botão de início -->
+        <div id="timer">Tempo: 40s</div>
+        <button id="startButton" class="cta-button">Começar Desafio</button>
+
+        <!-- Grid do jogo -->
         <div id="memoryGrid" class="memory-grid-7x2"></div>
 
-        <button onclick="window.location.href='index2.html'" class="cta-button">
-            Voltar ao Menu
-        </button>
-
-   <div id="prizeModal" class="modal-overlay">
-    <div id="modalContent" class="modal-content">
+        <!-- Modal de prêmio -->
+        <div id="prizeModal" class="modal-overlay">
+            <div id="modalContent" class="modal-content"></div>
         </div>
-</div>
+
+        <!-- Modal de Game Over -->
+        <div id="gameOverModal">
+            <div class="modal-content">
+                <h2>⏰ Tempo Esgotado!</h2>
+                <p>Recomeçe o desafio da dora do sharingan!</p>
+                <button class="cta-button" onclick="location.reload()">Recomeçar</button>
+            </div>
+        </div>
+
+        <!-- Botão de voltar -->
+        <button onclick="window.location.href='index2.html'" class="cta-button">Voltar ao Menu</button>
     </main>
 
     <script src="js/dora.js"></script>
+
+    <!-- Script do cronômetro e controle -->
+    <script>
+        const memoryGrid = document.getElementById('memoryGrid');
+        const timerDisplay = document.getElementById('timer');
+        const startButton = document.getElementById('startButton');
+        const gameOverModal = document.getElementById('gameOverModal');
+
+        let timeLeft = 40;
+        let timerInterval;
+
+        // Oculta o grid até começar
+        memoryGrid.style.display = 'none';
+
+        startButton.addEventListener('click', () => {
+            memoryGrid.style.display = 'grid';
+            startButton.style.display = 'none';
+            startTimer();
+        });
+
+        function startTimer() {
+            timerDisplay.textContent = `Tempo: ${timeLeft}s`;
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                timerDisplay.textContent = `Tempo: ${timeLeft}s`;
+
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    gameOverModal.classList.add('visible');
+                }
+            }, 1000);
+        }
+    </script>
 </body>
 </html>

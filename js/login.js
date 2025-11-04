@@ -8,7 +8,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
 
     // Credenciais Corretas
     const USER_CORRETO = "panelinha";
-    const SENHA_CORRETA = "02112006";
+    const SENHA_CORRETA = "jd0211toji";
 
     if (usernameInput === USER_CORRETO && passwordInput === SENHA_CORRETA) {
         // Credenciais corretas: Redireciona para a página principal

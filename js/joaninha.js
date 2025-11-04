@@ -69,7 +69,7 @@ function spawnLadybug(x) {
     const y = GAME_HEIGHT - GROUND_HEIGHT - (Math.random() * 120 + 125); 
     ladybugs.push({ x, y, collected: false });
 }
-for (let i = 400; i < 15000; i += 450) spawnLadybug(i);
+for (let i = 400; i < 15000; i += 664) spawnLadybug(i);
     
     document.addEventListener('keydown', (e) => {
     // 1. Impede a ação padrão (rolagem da tela, etc.) para o jogo
