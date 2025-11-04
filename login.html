@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aventuras de Dora e Joaninha - Login</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        body.login-body {
+            font-family: "Poppins", "Comic Sans MS", sans-serif;
+            background: linear-gradient(135deg, #c8a9ff, #87758b);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #3a0066;
+        }
+
+        .login-container {
+            background: #fff;
+            border-radius: 20px;
+            padding: 40px 35px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            animation: fadeIn 0.8s ease;
+        }
+
+        h1 {
+            color: #6a1b9a;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(230, 200, 255, 0.8);
+        }
+
+        p {
+            font-size: 1rem;
+            color: #5c0099;
+            margin: 8px 0;
+        }
+
+        .input-group {
+            text-align: left;
+            margin: 15px 0;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            color: #4b0082;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 10px;
+            border: 2px solid #87758b;
+            outline: none;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #8e24aa;
+            box-shadow: 0 0 8px rgba(142, 36, 170, 0.4);
+        }
+
+        .cta-button {
+            background: linear-gradient(90deg, #a16eff #87758b);
+            border: none;
+            color:#87758b(165, 44, 44);
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            margin-top: 15px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            background: linear-gradient(90deg, #8a56ff, #b44cff);
+        }
+
+        .error-message {
+            color: #d32f2f;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+
+<body class="login-body">
+    <div class="login-container">
+        <h1>Bem-vinda, Panelinha!!! 💖</h1>
+        <p>A aventura só começa se você souber a senha.</p>
+        <p>Vou te dar uma dica, é o seu aniversario em (dd/mm) + o nome do Personagem que voce é.</p>
+        
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="username">Usuário:</label>
+                <input type="text" id="username" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="password">Senha:</label>
+                <input type="password" id="password" required>
+            </div>
+            
+            <p id="errorMessage" class="error-message"></p>
+            
+            <button type="submit" class="cta-button">Entrar no Mundo Mágico</button>
+        </form>
+    </div>
+
+    <script src="js/login.js"></script>
+</body>
+</html>

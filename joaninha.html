@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pegue a Joaninha 🐞</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/joaninha-game.css">
+    <style>
+        /* === ESTILO GERAL === */
+        body.game-body {
+            background: linear-gradient(180deg, #c49bff 0%, #f2d7ff 40%, #ffffff 100%);
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            color: #3a2b5f;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* === CABEÇALHO === */
+        header {
+            width: 100%;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            border-bottom: 3px solid #b37bff;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+            color: #6d2fff;
+            text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.6);
+        }
+
+        .back-button {
+            position: absolute;
+            left: 20px;
+            top: 15px;
+            text-decoration: none;
+            background: linear-gradient(90deg, #a56eff, #d67bff);
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        .back-button:hover {
+            background: linear-gradient(90deg, #8f50ff, #c45aff);
+            transform: scale(1.07);
+        }
+
+        #gameStatus {
+            margin-top: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #3a2b5f;
+        }
+
+        /* === CANVAS E CONTEÚDO === */
+        .game-main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 40px 0;
+        }
+
+        canvas {
+            border: 4px solid #a56eff;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(142, 68, 173, 0.3);
+            background: linear-gradient(to top, #d7b0ff 60%, #f3e6ff 100%);
+        }
+
+        /* === MODAL === */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            background: rgba(55, 0, 90, 0.4);
+            z-index: 20;
+        }
+
+        .modal.visible {
+            display: flex;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .modal-content {
+            background: #fff;
+            border-radius: 25px;
+            padding: 40px 50px;
+            text-align: center;
+            max-width: 420px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+            animation: popUp 0.4s ease;
+        }
+
+        @keyframes popUp {
+            from {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .modal-content h2 {
+            color: #8e44ad;
+            margin-bottom: 10px;
+        }
+
+        .ticket-prize {
+            background: #fbeaff;
+            border: 2px dashed #b37bff;
+            border-radius: 15px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .ticket-prize h3 {
+            margin: 0;
+            color: #7d3cff;
+        }
+
+        .cta-button {
+            background: linear-gradient(90deg, #a56eff, #d67bff);
+            color: white;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(143, 68, 173, 0.4);
+        }
+
+        .cta-button:hover {
+            background: linear-gradient(90deg, #8f50ff, #c45aff);
+            transform: scale(1.05);
+        }
+
+        .secondary-button {
+    background: #ccc; /* Cor cinza para não competir com o principal */
+    margin-left: 10px;
+}
+
+.secondary-button:hover {
+    background: #bbb;
+}
+    </style>
+</head>
+
+<body class="game-body">
+    <header> <a href="index2.html" class="back-button">← Voltar</a>
+        <h1>🐞 Pegue a Joaninha</h1>
+        <div id="gameStatus"> <span id="score">Joaninhas Coletadas: 0 / 19</span> </div>
+    </header>
+    <main class="game-main"> <canvas id="gameCanvas" width="1200" height="400"></canvas> </main>
+    <div id="prizeModal" class="modal">
+        <div class="modal-content">
+            <h2>Fase Completa! Que Gatinha Ágil! 🏃‍♀️</h2>
+            <p>Por ter resgatado todas as Joaninhas, você ganhou:</p>
+            <div class="ticket-prize">
+                <h3>🎁 “Vale Dorama comigo 💖”</h3>
+            </div> <button onclick="window.location.href='index2.html'" class="cta-button">Voltar ao Menu</button>
+        </div>
+    </div>
+    <script src="js/joaninha.js"></script>
+</body>
+
+</html>

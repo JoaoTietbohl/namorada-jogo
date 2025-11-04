@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>As Aventuras de Dora e Joaninha</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        body.main-body {
+            font-family: "Poppins", "Comic Sans MS", sans-serif;
+            background: linear-gradient(135deg, #c8a9ff, #b6baff);
+            margin: 0;
+            padding: 0;
+            color: #3a0066;
+        }
+
+        .main-header {
+            text-align: center;
+            padding: 40px 15px 20px;
+            background: linear-gradient(90deg, #b77dff, #dbaaff);
+            border-bottom: 4px solid #9b5de5;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .main-header h1 {
+            font-size: 2rem;
+            color: #4b0082;
+            margin: 10px 0 5px;
+            text-shadow: 1px 1px 3px rgba(255,255,255,0.6);
+        }
+
+        .main-header p {
+            color: #5c0099;
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        .hero-image {
+            width: 120px;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            border: 3px solid #fff;
+        }
+
+        .game-selection-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 40px 20px;
+        }
+
+        .game-card {
+            background: #fff;
+            border-radius: 20px;
+            width: 300px;
+            text-align: center;
+            padding: 25px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+        }
+
+        .cat-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid #b388ff;
+        }
+
+        h2 {
+            color: #6a1b9a;
+            font-size: 1.4rem;
+            margin: 10px 0;
+        }
+
+        p {
+            color: #5c0099;
+            margin: 5px 0 15px;
+            font-size: 0.95rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 25px;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(90deg, #a16eff, #c57cff);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            background: linear-gradient(90deg, #8a56ff, #b44cff);
+        }
+
+        .dora-button {
+            background: linear-gradient(90deg, #a16eff, #c57cff);
+        }
+
+        .joaninha-button {
+            background: linear-gradient(90deg, #9a68ff, #bb80ff);
+        }
+    </style>
+</head>
+
+<body class="main-body">
+
+    <header class="main-header">
+        <img src="img/pamela-index.png" alt="imagem boneco P" class="hero-image">
+        <h1>Escolha qual começar!</h1>
+        <p>Ao completar os mini-jogos voce ganhara premios!</p>
+    </header>
+
+    <main class="game-selection-container">
+        <div class="game-card left-side">
+            <img src="img/dora-index.png" alt="imgDora" class="cat-image">
+            <h2>jogo da memoria</h2>
+            <p>Um jogo da memoria da gatinha mais linda que ja vi</p>
+            <a href="dora.html" class="cta-button dora-button">🧩Clique aqui para montar a dora</a>
+        </div>
+        
+        <div class="game-card right-side">
+            <img src="img/joana-index.png" alt="imgJoaninha" class="cat-image">
+            <h2>salve a joana</h2>
+            <p>um joguinho para salvar todas as Joaninhas espalhadas pelo mapa</p>
+            <a href="joaninha.html" class="cta-button joaninha-button">🐞ajude a rata</a>
+        </div>
+    </main>
+    
+</body>
+</html>

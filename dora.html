@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memória da Dora 🐾</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dora-puzzle.css">
+<style>
+    body.puzzle-body {
+        font-family: "Comic Sans MS", "Poppins", sans-serif;
+        background: linear-gradient(135deg, #87758b, #b6baff);
+        margin: 0;
+        padding: 0;
+        color: #3d0066;
+    }
+
+    header {
+        text-align: center;
+        background: linear-gradient(90deg, #87758b, #dbaaff);
+        padding: 20px;
+        border-bottom: 4px solid #9b5de5;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+        margin: 10px 0 5px;
+        font-size: 2rem;
+        color:#87758b;
+        text-shadow: 1px 1px 3px rgba(255,255,255,0.6);
+    }
+
+    header p {
+        font-size: 1rem;
+        margin: 0;
+        color: #5c0099;
+    }
+
+    .back-button {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        text-decoration: none;
+        background-color: #fff;
+        padding: 8px 14px;
+        border-radius: 20px;
+        color: #7e57c2;
+        font-weight: bold;
+        border: 2px solid #b388ff;
+        transition: all 0.3s ease;
+    }
+
+    .back-button:hover {
+        background-color: #b388ff;
+        color: white;
+    }
+
+    .memory-main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 15px;
+    }
+
+    .memory-grid-7x2 {
+        display: grid;
+        grid-template-columns: repeat(7, 90px);
+        grid-gap: 15px;
+        justify-content: center;
+        margin-bottom: 25px;
+    }
+
+    .memory-grid-7x2 img {
+        width: 90px;
+        height: 90px;
+        border-radius: 10px;
+        border: 3px solid #fff;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        transition: transform 0.2s ease, box-shadow 0.3s;
+    }
+
+    .memory-grid-7x2 img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 10px rgba(0,0,0,0.3);
+    }
+
+    .cta-button {
+        background: linear-gradient(90deg, #a16eff, #c57cff);
+        border: none;
+        color: white;
+        padding: 12px 25px;
+        border-radius: 25px;
+        font-size: 1rem;
+        cursor: pointer;
+        font-weight: bold;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+        transition: background 0.3s, transform 0.2s;
+    }
+
+    .cta-button:hover {
+        transform: scale(1.05);
+        background: linear-gradient(90deg, #8a56ff, #b44cff);
+    }
+
+    
+</style>
+
+</head>
+
+<body class="puzzle-body">
+    <header>
+        <a href="index2.html" class="back-button">← Voltar</a>
+        <h1>Jogo da Memória da Dora</h1>
+        <p>Encontre os 5 pares para ganhar o prêmio!</p>
+    </header>
+
+    <main class="memory-main">
+        <div id="memoryGrid" class="memory-grid-7x2"></div>
+
+        <button onclick="window.location.href='index2.html'" class="cta-button">
+            Voltar ao Menu
+        </button>
+
+   <div id="prizeModal" class="modal-overlay">
+    <div id="modalContent" class="modal-content">
+        </div>
+</div>
+    </main>
+
+    <script src="js/dora.js"></script>
+</body>
+</html>
