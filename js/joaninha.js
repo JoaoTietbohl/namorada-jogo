@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const SCROLL_SPEED = 7;      // Velocidade de rolagem (Fundo)
     const PLAYER_SIDE_SPEED = 10; // Velocidade lateral do personagem
     const GROUND_HEIGHT = 80;
-    const LADYBUG_GOAL = 19;
+    const LADYBUG_GOAL = 8;
 
     let scrollX = 0;
     let collectedCount = 0;
